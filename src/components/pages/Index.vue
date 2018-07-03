@@ -4,9 +4,10 @@
         <div class="content">  
             <ul class="cont_ul">  
                 <list  
-                    v-for="item in items"  
+                    v-for="(item,index) in items"  
                     :price="item.price"  
-                    :title="item.title">  
+                    :title="item.title"
+                    :key="index">  
                 </list>  
             </ul>  
         </div>  
@@ -33,11 +34,11 @@
 <script>  
 
     import List from '@/components/models/List'  
-  
+
     export default {  
         created:function(){
 
-            this.$emit("titleChanged",{title:"首页3",'is_back':0});
+            this.$emit("titleChanged",{"title":"首页3","is_back":0});
 
         },
         data () {  
